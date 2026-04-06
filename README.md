@@ -2,6 +2,8 @@
 
 A visual-only OpenCode plugin that brings a subtle Matrix atmosphere to the terminal without getting in the way of coding.
 
+Credits: this plugin was built with heavy inspiration from [`kommander/oc-plugin-vault-tec`](https://github.com/kommander/oc-plugin-vault-tec).
+
 ## Design goals
 
 - Keep active coding surfaces readable
@@ -15,7 +17,7 @@ A visual-only OpenCode plugin that brings a subtle Matrix atmosphere to the term
 > **Note:** This plugin is intentionally not being published to npm right now.
 > Install it locally using the instructions below.
 
-The validated local install path is to install this repository as a local plugin package using its `file:///` path.
+Install this repository as a local plugin package using its `file:///` path.
 
 ### Project-local install on Windows
 
@@ -72,9 +74,9 @@ That means:
 - Matrix defaults are applied from the package export config
 - the host-compatible `./server` entrypoint is present even though the plugin behavior is visual-only
 
-### Verified local E2E path
+### Validation
 
-This repository now includes an E2E test that validates the local package install path with real OpenCode commands:
+This repository includes an E2E test that validates the local package install path with real OpenCode commands:
 
 - `opencode plugin "file:///.../oc-plugin-matrix"`
 - fixture `.opencode/opencode.jsonc` creation
@@ -86,12 +88,6 @@ Run it with:
 ```powershell
 npm test
 ```
-
-### Why the old folder-copy method was wrong here
-
-Copying this repository into `.opencode/plugins/` does not match how this plugin is packaged.
-
-This repository is an OpenCode plugin package with `./server` and `./tui` exports in `package.json`, so the correct local path is package installation by `file:///...`, not blind folder copying.
 
 ### Package entrypoints
 
@@ -123,6 +119,11 @@ OpenCode reads these exports from `package.json`:
 - Optional `/matrix` cinematic burst command
 - Full-screen cinematic takeover only while `/matrix` is active
 
+## Commands
+
+- Open `Matrix settings` from the command palette to adjust presets and advanced controls.
+- Run `/matrix` for a short full-screen cinematic burst.
+
 ## Options
 
 Plugin options can be configured via `opencode.json` and `tui.json`.
@@ -144,9 +145,8 @@ Plugin options can be configured via `opencode.json` and `tui.json`.
 ## Usage notes
 
 - The default preset is tuned to stay out of your way during normal coding.
-- Use the command palette and open `Matrix settings` to adjust the look interactively.
-- Run `/matrix` whenever you want a short burst of stronger atmosphere.
 - The home banner is rendered above the backdrop rain so the landing screen stays readable.
+- The strongest effect is manual: nothing auto-triggers the cinematic takeover during normal work.
 
 ## Release status
 

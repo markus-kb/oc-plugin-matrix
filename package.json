@@ -1,0 +1,73 @@
+{
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "oc-plugin-matrix",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Matrix digital rain atmosphere plugin for OpenCode — visual-only, no personality changes.",
+  "keywords": [
+    "opencode",
+    "plugin",
+    "matrix",
+    "tui",
+    "theme"
+  ],
+  "license": "MIT",
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "src/"
+  ],
+  "exports": {
+    "./server": {
+      "import": "./src/server.ts"
+    },
+    "./tui": {
+      "import": "./src/index.ts",
+      "config": {
+        "enabled": true,
+        "theme": "matrix",
+        "set_theme": true,
+        "preset": "subtle",
+        "home": true,
+        "sidebar": true,
+        "rain": true,
+        "rain_speed": 0.045,
+        "rain_density": 0.32,
+        "vignette": 0.22,
+        "glow": 0.12
+      }
+    }
+  },
+  "scripts": {
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "prettier:check": "prettier --check .",
+    "prettier:write": "prettier --write .",
+    "fmt": "oxfmt --write .",
+    "fmt:check": "oxfmt --check ."
+  },
+  "dependencies": {
+    "@opencode-ai/plugin": "1.3.13"
+  },
+  "devDependencies": {
+    "@typescript-eslint/eslint-plugin": "8.31.1",
+    "@typescript-eslint/parser": "8.31.1",
+    "eslint": "9.24.0",
+    "oxfmt": "0.41.0",
+    "prettier": "3.5.3",
+    "typescript": "5.8.3",
+    "vitest": "3.2.4"
+  },
+  "peerDependencies": {
+    "@opencode-ai/plugin": "*",
+    "@opentui/core": "*",
+    "@opentui/solid": "*",
+    "solid-js": "*"
+  },
+  "engines": {
+    "opencode": ">=1.3.14"
+  }
+}

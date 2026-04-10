@@ -12,7 +12,7 @@ export const BANNER_LINES: readonly string[] = [
   "██║╚██╔╝██║██╔══██║   ██║   ██╔══██╗██║ ██╔██╗ ",
   "██║ ╚═╝ ██║██║  ██║   ██║   ██║  ██║██║██╔╝ ██╗",
   "╚═╝     ╚═╝╚═╝  ╚═╝   ╚═╝   ╚═╝  ╚═╝╚═╝╚═╝  ╚═╝",
-]
+];
 
 /**
  * Clamp a raw width/height pair to the minimum values required by the rain
@@ -25,4 +25,4 @@ export const safeDimensions = (
 ): { width: number; height: number } => ({
   width: Math.max(6, width),
   height: Math.max(3, height),
-})
+});

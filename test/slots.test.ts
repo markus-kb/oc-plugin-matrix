@@ -1,7 +1,7 @@
-import { describe, expect, it } from "vitest"
+import { describe, expect, it } from "vitest";
 
-import { resolveConfig } from "../src/features/config"
-import { slotEnabled } from "../src/features/slot-guards"
+import { resolveConfig } from "../src/features/config";
+import { slotEnabled } from "../src/features/slot-guards";
 
 // Regression: home_logo uses "replace" mode — the host falls back to the default
 // logo whenever the plugin slot renders null/undefined.  The <Show when={...}>
@@ -12,22 +12,22 @@ import { slotEnabled } from "../src/features/slot-guards"
 // of the JSX runtime.
 describe("slotEnabled", () => {
   it("home_logo is enabled by default (home=true)", () => {
-    const cfg = resolveConfig()
-    expect(slotEnabled(cfg, "home")).toBe(true)
-  })
+    const cfg = resolveConfig();
+    expect(slotEnabled(cfg, "home")).toBe(true);
+  });
 
   it("home_logo is disabled when home=false", () => {
-    const cfg = resolveConfig({ home: false })
-    expect(slotEnabled(cfg, "home")).toBe(false)
-  })
+    const cfg = resolveConfig({ home: false });
+    expect(slotEnabled(cfg, "home")).toBe(false);
+  });
 
   it("sidebar_content is enabled by default (sidebar=true)", () => {
-    const cfg = resolveConfig()
-    expect(slotEnabled(cfg, "sidebar")).toBe(true)
-  })
+    const cfg = resolveConfig();
+    expect(slotEnabled(cfg, "sidebar")).toBe(true);
+  });
 
   it("sidebar_content is disabled when sidebar=false", () => {
-    const cfg = resolveConfig({ sidebar: false })
-    expect(slotEnabled(cfg, "sidebar")).toBe(false)
-  })
-})
+    const cfg = resolveConfig({ sidebar: false });
+    expect(slotEnabled(cfg, "sidebar")).toBe(false);
+  });
+});

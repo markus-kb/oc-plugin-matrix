@@ -1,9 +1,9 @@
 // @ts-nocheck
 /** @jsxImportSource @opentui/solid */
-import type { TuiThemeCurrent } from "@opencode-ai/plugin/tui"
+import type { TuiThemeCurrent } from "@opencode-ai/plugin/tui";
 
-import type { MatrixConfig } from "./config"
-import { MatrixRain } from "./matrix-rain"
+import type { MatrixConfig } from "./config";
+import { MatrixRain } from "./matrix-rain";
 
 /**
  * Full-screen rain backdrop rendered in the `app` slot at zIndex=0.
@@ -30,8 +30,8 @@ export const HomeBackdrop = (props: { theme: TuiThemeCurrent; value: MatrixConfi
         speed={props.value.rainSpeed}
       />
     </box>
-  )
-}
+  );
+};
 
 /**
  * Full-screen rain overlay for the cinematic burst (/matrix command).
@@ -53,5 +53,5 @@ export const CinematicOverlay = (props: { theme: TuiThemeCurrent }) => {
     >
       <MatrixRain theme={props.theme} density={1} speed={0.15} />
     </box>
-  )
-}
+  );
+};

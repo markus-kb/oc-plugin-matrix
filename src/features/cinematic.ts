@@ -6,7 +6,7 @@
  */
 
 /** Duration of a single cinematic burst in milliseconds. */
-export const BURST_DURATION_MS = 4500
+export const BURST_DURATION_MS = 4500;
 
 /**
  * The discriminated-union shape that OpenCode's api.route.current returns.
@@ -15,13 +15,13 @@ export const BURST_DURATION_MS = 4500
 export type RouteShape =
   | { name: "home" }
   | { name: "session"; params: { sessionID: string; [key: string]: unknown } }
-  | { name: string; params?: Record<string, unknown> }
+  | { name: string; params?: Record<string, unknown> };
 
 /**
  * Returns true only when the current route is the home screen.
  * Used to gate the background rain so it doesn't render during sessions.
  */
-export const isHomeRoute = (route: RouteShape): boolean => route.name === "home"
+export const isHomeRoute = (route: RouteShape): boolean => route.name === "home";
 
 /**
  * Returns a [0, 1] ramp value representing how far through the burst we are.
@@ -34,8 +34,8 @@ export const isHomeRoute = (route: RouteShape): boolean => route.name === "home"
  * arbitrary timestamps rather than relying on real wall-clock time.
  */
 export const burstRamp = (now: number, deadline: number): number => {
-  if (deadline <= 0) return 0
-  const remaining = deadline - now
-  if (remaining <= 0) return 0
-  return Math.min(1, remaining / BURST_DURATION_MS)
-}
+  if (deadline <= 0) return 0;
+  const remaining = deadline - now;
+  if (remaining <= 0) return 0;
+  return Math.min(1, remaining / BURST_DURATION_MS);
+};

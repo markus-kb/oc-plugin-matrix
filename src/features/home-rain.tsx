@@ -1,8 +1,8 @@
 // @ts-nocheck
 /** @jsxImportSource @opentui/solid */
-import type { TuiThemeCurrent } from "@opencode-ai/plugin/tui"
+import type { TuiThemeCurrent } from "@opencode-ai/plugin/tui";
 
-import { BANNER_LINES } from "./layout"
+import { BANNER_LINES } from "./layout";
 
 /**
  * Static banner rendered in the `home_logo` slot.
@@ -26,5 +26,5 @@ export const HomeBanner = (props: { theme: TuiThemeCurrent }) => {
         Subtle by default. Atmospheric by design. Coding stays readable.
       </text>
     </box>
-  )
-}
+  );
+};
